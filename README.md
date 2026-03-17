@@ -2,7 +2,10 @@
 
 A lightweight, automated Python tool designed to benchmark multiple GGUF models using `llama-cli.exe`. This app helps you find the "sweet spot" between model quantization (BPW) and inference speed (Tokens per Second) on your specific hardware.
 
-*(Tip: Replace this with the screenshot you shared!)*
+> this is the code of my Medium series **"Not All Quantizations Are Born Equal"**
+
+
+<img src='https://github.com/fabiomatricardi/llamacppbenchmarks/raw/main/lcpp-benchmarks.gif' width=1000>
 
 ## ✨ Key Features
 
