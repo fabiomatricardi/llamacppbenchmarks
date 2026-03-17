@@ -99,9 +99,3 @@ Feel free to fork this repo and add new features! Some ideas:
 ---
 
 
-
-```
-
-This prevents you from accidentally trying to upload multi-gigabyte model files to your code repository!
-
-Would you like me to help you write the `.gitignore` or a `requirements.txt` file as well?
