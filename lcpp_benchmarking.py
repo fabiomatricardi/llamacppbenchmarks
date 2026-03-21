@@ -66,7 +66,14 @@ def execute_benchmark(folder_path, model_file, thread_count, log_file):
         "--reasoning-budget", "0", "--log-file", log_file
     ]
     try:
-        result = subprocess.run(command, capture_output=True, text=True, timeout=300, check=False)
+        result = subprocess.run(
+            command, 
+            capture_output=True, 
+            text=True, 
+            timeout=300, 
+            check=False,
+            errors="replace"  # <--- Add this line
+        )
         metrics = extract_speeds_and_bpw(result.stdout, result.stderr)
         return {
             "model": model_file, "prompt_speed_tps": metrics["prompt_speed_tps"],
@@ -208,7 +215,10 @@ if __name__ == "__main__":
         if HAS_RICH:
             Console().print("\n", Markdown(generate_markdown_table(results)))
             print_winners(results)
+            input("Press any key to exit...")
         else:
             print(generate_markdown_table(results))
+            input("Press any key to exit...")
     else:
         print("🛑 Benchmarking cancelled.")
+        input("Press any key to exit...")
